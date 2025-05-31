@@ -1,0 +1,85 @@
+/* Navigation bar wrapper */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Logo section */
+.navbar-logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #2f7d32;
+  text-decoration: none;
+}
+
+.farm-highlight {
+  color: #000; /* Optional black highlight */
+}
+
+/* Links container */
+.navbar-links {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.navbar-links a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar-links a:hover {
+  color: #4caf50;
+}
+
+/* Auth buttons */
+.navbar-auth {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.auth-btn {
+  padding: 6px 12px;
+  background-color: #4caf50;
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.auth-btn:hover {
+  background-color: #388e3c;
+  transform: scale(1.05);
+}
+
+/* Responsive navbar */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+    gap: 0.6rem;
+  }
+
+  .navbar-auth {
+    margin-top: 10px;
+    width: 100%;
+    justify-content: flex-start;
+  }
+}

@@ -1,0 +1,176 @@
+/* Your existing home-hero styles — unchanged */
+.home-hero {
+  background-image: url('C:/Users/hp/Documents/GitHub/krishi/frontend/src/assets/agri1.jpg');
+  height: 800px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  min-width: 1300px; /* fixed layout */
+  box-shadow: inset 0 0 50px rgba(0, 100, 0, 0.3);
+}
+
+.hero-overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 50, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeInOverlay 1.5s ease-in-out;
+}
+
+.hero-text {
+  text-align: center;
+  color: #fff;
+  animation: slideUp 1.2s ease-out;
+  padding: 20px;
+  max-width: 900px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  box-shadow: 0 0 15px #4caf50;
+}
+
+.hero-text h1 {
+  font-size: 60px;
+  line-height: 1.3;
+  text-shadow: 2px 2px 4px #000;
+}
+
+.highlight-script {
+  font-family: 'Brush Script MT', cursive;
+  color: #ffcc6d;
+  font-size: 72px;
+  animation: glowPulse 2.5s infinite alternate;
+}
+
+.explore-btn {
+  margin-top: 40px;
+  padding: 12px 30px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s;
+  box-shadow: 0 0 10px rgba(76, 175, 80, 0.4);
+}
+
+.explore-btn:hover {
+  background-color: #388e3c;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(56, 142, 60, 0.6);
+}
+
+/* Animations */
+@keyframes fadeInOverlay {
+  from {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  to {
+    background-color: rgba(0, 50, 0, 0.45);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(60px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes glowPulse {
+  from {
+    text-shadow: 0 0 10px #ffd700, 0 0 20px #ffb300;
+  }
+  to {
+    text-shadow: 0 0 20px #ffc107, 0 0 30px #ffa000;
+  }
+}
+
+/* ===== New Explore Cards Section ===== */
+.explore-section {
+  max-width: 1100px;
+  margin: 60px auto 120px;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.explore-section-title {
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: #2f5d20;
+  margin-bottom: 40px;
+  font-family: 'Segoe UI Semibold', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 0.04em;
+}
+
+.explore-cards-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  padding: 0 20px;
+}
+
+.explore-card {
+  background: #eaf5ea;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(56, 105, 15, 0.2);
+  padding: 30px 35px;
+  color: #2f5d20;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.explore-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(56, 105, 15, 0.45);
+}
+
+.explore-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 18px;
+  font-weight: 700;
+  color: #3b6e23;
+}
+
+.explore-card p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: #4b6f29;
+  flex-grow: 1;
+}
+
+/* Remove the responsive tweaks to make style consistent across devices */
+/* (This disables media query overrides) */
+@media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 60px; /* keep original size */
+  }
+
+  .highlight-script {
+    font-size: 72px; /* keep original size */
+  }
+
+  .explore-btn {
+    font-size: 18px; /* keep original size */
+    padding: 12px 30px; /* keep original size */
+  }
+
+  .explore-cards-container {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* keep original grid */
+  }
+}

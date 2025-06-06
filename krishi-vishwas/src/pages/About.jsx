@@ -1,18 +1,34 @@
 import React from 'react';
 
 const About = () => {
-  const pageStyle = {
+  const videoBackground = {
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    width: '100vw',
+    height: '100vh',
+    objectFit: 'cover',
+    zIndex: -1,
+  };
+
+  const overlayStyle = {
+    position: 'relative',
+    zIndex: 1,
     fontFamily: 'Segoe UI, sans-serif',
-    color: '#3b4b3f',
-    background: 'url("https://img.freepik.com/free-photo/green-field-blue-sky_1232-4263.jpg") no-repeat center center/cover',
-    minHeight: '100vh',
+    color: '#1b5e20',
   };
 
   const headerStyle = {
-    backgroundColor: 'rgba(0, 128, 0, 0.7)',
-    color: '#fff',
-    padding: '40px 20px',
+    background: 'rgba(255, 255, 255, 0.2)',
+    backdropFilter: 'blur(10px)',
+    WebkitBackdropFilter: 'blur(10px)',
+    borderBottom: '2px solid rgba(255, 255, 255, 0.3)',
+    padding: '60px 20px',
     textAlign: 'center',
+    borderBottomLeftRadius: '40px',
+    borderBottomRightRadius: '40px',
+    boxShadow: '0 4px 20px rgba(0,0,0,0.3)',
+    color: '#1b5e20',
   };
 
   const contentStyle = {
@@ -20,9 +36,10 @@ const About = () => {
     flexWrap: 'wrap',
     justifyContent: 'center',
     padding: '40px 20px',
-    backgroundColor: 'rgba(255, 255, 255, 0.8)',
+    backgroundColor: 'rgba(255, 255, 255, 0.85)',
     margin: '20px',
     borderRadius: '10px',
+    boxShadow: '0 4px 15px rgba(0,0,0,0.2)',
   };
 
   const textStyle = {
@@ -44,9 +61,11 @@ const About = () => {
   const footerStyle = {
     textAlign: 'center',
     padding: '20px',
-    backgroundColor: 'rgba(0, 128, 0, 0.7)',
+    backgroundColor: 'rgba(0, 128, 0, 0.8)',
     color: '#fff',
     marginTop: '20px',
+    borderTopLeftRadius: '20px',
+    borderTopRightRadius: '20px',
   };
 
   const heading2Style = {
@@ -66,12 +85,23 @@ const About = () => {
   };
 
   return (
-    <div style={pageStyle}>
+    <div style={overlayStyle}>
+      {/* Background Video */}
+      <video autoPlay muted loop style={videoBackground}>
+        <source src="/videos/agriculture.mp4" type="video/mp4" />
+      </video>
+
+      {/* Header */}
       <header style={headerStyle}>
-        <h1>🌱 About Krishi Vishwas</h1>
-        <p>Empowering farmers with trust, innovation, and sustainability.</p>
+        <h1 style={{ fontSize: '3rem', marginBottom: '15px', fontWeight: 'bold' }}>
+          🌾 Welcome to <span style={{ color: '#2e7d32' }}>Krishi Vishwas</span>
+        </h1>
+        <p style={{ fontSize: '1.3rem', fontWeight: 500 }}>
+          Empowering farmers with trust, innovation & sustainable growth.
+        </p>
       </header>
 
+      {/* Content Section */}
       <section style={contentStyle}>
         <div style={textStyle}>
           <h2 style={heading2Style}>Our Mission</h2>
@@ -94,6 +124,8 @@ const About = () => {
             Be part of a growing community dedicated to revolutionizing agriculture in India.
             Together, we can create a future where every farmer thrives!
           </p>
+          <p><strong>📞 Contact:</strong> +91-9876543210</p>
+          <p><strong>📧 Email:</strong> support@krishivishwas.in</p>
         </div>
 
         <div style={imageStyle}>
@@ -105,6 +137,7 @@ const About = () => {
         </div>
       </section>
 
+      {/* Footer */}
       <footer style={footerStyle}>
         <p>© 2025 Krishi Vishwas | Growing Together 🌿</p>
       </footer>
